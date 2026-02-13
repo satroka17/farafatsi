@@ -21,11 +21,16 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl py-20">
-          <div className="mb-8 inline-block">
-            <div className="w-32 h-32 mx-auto bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border-4 border-white/30">
-              <span className="text-6xl">🌳</span>
+          {/* LOGO OFFICIEL AU LIEU DE L'ÉMOJI */}
+          {/* <div className="mb-8 inline-block">
+            <div className="w-32 h-32 mx-auto bg-white rounded-full flex items-center justify-center border-4 border-white/30 overflow-hidden shadow-2xl">
+              <img
+                src="/logo-farafatsi.jpg" // Assurez-vous que le nom du fichier est correct
+                alt="Logo Association FARAFATSI"
+                className="w-full h-full object-cover" 
+              />
             </div>
-          </div>
+          </div> */}
           
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             Association FARAFATSI
@@ -42,13 +47,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="#about"
-              className="bg-green-600 hover:bg-green-700 px-10 py-4 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg text-lg"
+              /* MISE À JOUR : Utilisation de vos couleurs de marque brand-green */
+              className="bg-brand-green hover:bg-brand-green-dark px-10 py-4 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg text-lg text-white"
             >
               Découvrir notre mission
             </a>
             <a
               href="#contact"
-              className="border-2 border-white px-10 py-4 rounded-full hover:bg-white hover:text-green-900 transition-all transform hover:scale-105 font-semibold backdrop-blur-sm text-lg"
+              className="border-2 border-white px-10 py-4 rounded-full hover:bg-white hover:text-brand-green transition-all transform hover:scale-105 font-semibold backdrop-blur-sm text-lg text-white"
             >
               Nous contacter
             </a>
@@ -347,7 +353,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-bold text-green-900">WhatsApp</p>
-                      <p className="text-gray-700">+261 XX XX XXX XX</p>
+                      <p className="text-gray-700">+261 33 04 110 75</p>
                     </div>
                   </div>
                 </div>

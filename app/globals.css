@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Variables brutes pour usage interne si besoin */
+  --brand-green: #228B22;
+  --brand-green-dark: #1A691A;
+  --brand-accent: #FFA500;
 }
 
 @theme inline {
@@ -10,6 +15,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* ICI ON AJOUTE LES COULEURS POUR TAILWIND v4 */
+  --color-brand-green: #228B22;
+  --color-brand-green-dark: #1A691A;
+  --color-brand-accent: #FFA500;
+  --color-brand-accent-dark: #E69500;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,60 +42,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Animations */
+/* Animations */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+.animate-fade-in-up { animation: fade-in-up 1s ease-out; }
 
-@keyframes slow-zoom {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
+/* Scrollbar avec la couleur de la marque */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-green-dark); }
 
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out;
-}
+/* Transitions */
+a, button { transition: all 0.3s ease; }
 
-.animate-slow-zoom {
-  animation: slow-zoom 20s ease-in-out infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #16a34a;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #15803d;
-}
-
-/* Smooth transitions for all interactive elements */
-a, button {
-  transition: all 0.3s ease;
-}
-
-/* Focus styles for accessibility */
+/* Focus accessible */
 a:focus-visible, button:focus-visible {
-  outline: 2px solid #16a34a;
+  outline: 2px solid var(--brand-green);
   outline-offset: 2px;
 }
